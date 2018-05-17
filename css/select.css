@@ -1,0 +1,4 @@
+#special #special_list li:hover{background: #000}
+#special #special_list li:hover a{color: #fff;}
+#special #special_list li a:hover{color: #fff;}
+#special #special_list li a: active{color:red;}
