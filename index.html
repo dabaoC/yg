@@ -4,10 +4,13 @@
 	<title></title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/comment.css">
 </head>
 <body>
 	<a href="#"><img src="http://i2.ygimg.cn/pics/shop/cms/home/2018/05/07/48320180507T162533.jpg" class="head_img"></a>
 	<!-- 导航条 -->
+	<!-- <iframe src="head.html" width="100%"; height="28px"  frameborder="0" scrolling="no" ></iframe>  -->
+	<!-- <header></header> -->
 	<div id="nav">
 		<div class="nav_content">
 			<ul class="nav_left">
@@ -16,8 +19,8 @@
 			</ul>
 
 			<ul class="nav_right">
-				<li class="nav_red"><a href="#">登录</a></li>
-				<li class="nav_red"><a href="#">注册</a></li>
+				<li class="nav_red"><a href="login.html">登录</a></li>
+				<li class="nav_red"><a href="register.html">注册</a></li>
 				<li class="spacer"></li>
 				<li><a href="#">我的优购<i class="three"></i></a></li>
 				<li><a href="#">我的订单</a></li>
@@ -83,7 +86,7 @@
 
 					<li>
 						<div class="titt">
-							<i class="nvx"></i>
+							<i class="nanx"></i>
 							<h3><a href="#">男鞋</a></h3>
 							<p class="categoryy">
 								
@@ -93,7 +96,7 @@
 
 					<li>
 						<div class="titt">
-							<i class="nvx"></i>
+							<i class="spx"></i>
 							<h3><a href="#">运动</a></h3>
 							<p class="categoryy">
 								
@@ -103,7 +106,7 @@
 					
 					<li>
 						<div class="titt">
-							<i class="nvx"></i>
+							<i class="hwx"></i>
 							<h3><a href="#">户外</a></h3>
 							<p class="categoryy">
 								
@@ -113,7 +116,7 @@
 
 					<li>
 						<div class="titt">
-							<i class="nvx"></i>
+							<i class="cdx"></i>
 							<h3><a href="#">童装/童鞋</a></h3>
 							<p class="categoryy">
 								
@@ -123,7 +126,7 @@
 
 					<li>
 						<div class="titt">
-							<i class="nvx"></i>
+							<i class="xb"></i>
 							<h3><a href="#">箱包/配饰</a></h3>
 							<p class="categoryy">
 								
@@ -131,12 +134,37 @@
 						</div>
 					</li>
 
-
 				</ul>
+				<div class="second_list"></div>
 				
 			</div>
 
-			<div id="images"></div>
+			<div id="images">
+				<ul class="carousel"> 
+					<li>
+						<a href="#"><img src="http://i2.ygimg.cn/pics/shop/cms/home/2018/05/17/49720180517T171423.jpg"></a>
+					</li>
+					<li>
+						<a href="#"><img src="http://i2.ygimg.cn/pics/shop/cms/home/2018/05/17/81820180517T155012.jpg"></a>
+					</li>
+					<li>
+						<a href="#"><img src="http://i2.ygimg.cn/pics/shop/cms/home/2018/05/17/33320180517T154915.jpg"></a>
+					</li>
+					<li>
+						<a href="#"><img src="http://i2.ygimg.cn/pics/shop/cms/home/2018/05/17/75320180517T154812.jpg"></a>
+					</li>
+					<li>
+						<a href="#"><img src="http://i2.ygimg.cn/pics/shop/cms/home/2018/05/17/44820180517T154727.jpg"></a>
+					</li>
+				</ul>
+
+				<ul class="img-index"></ul>
+
+				<div class="carousel-prev"><img src="images/left_btn1.png"></div>
+				<div class="carousel-next"><img src="images/right_btn1.png"></div>
+ 
+				
+			</div>
 		
 		</div>
 	</div>
@@ -479,8 +507,8 @@
 		<i>特卖专区</i>
 		<div class="sp_content">
 			<ul id="special_list">
-				<li class="sp_li">
-					<a href="#">户外馆<i>></i></a>
+				<li class="sp_li sp_on">
+					<a href="#" class="sp_aon">户外馆<i class="sp_aon">></i></a>
 
 				</li>
 				<li class="sp_li">
@@ -1136,13 +1164,45 @@
 
 
 	<script src="libs/jquery-3.3.1.js"></script>
+	<script src="libs/banner.js"></script>
 	<script>
-				$(".wrap_nav>li").eq(4).css({float:"right"})
-				$(".wrap_nav>li>a").eq(3).css({color:"#E60012"})
 
+		// 轮播图
+		$(function(){
+			
+			
+			$("header").load("header.html #nav");
+
+			$(".carousel-content").carousel({
+				carousel : ".carousel",//轮播图容器
+				indexContainer : ".img-index",//下标容器
+				prev : ".carousel-prev",//左按钮
+				next : ".carousel-next",//右按钮
+				timing : 2000,//自动播放间隔
+				animateTime : 0,//动画时间
+				auto : true,//是否自动播放
+			});
+
+			$(".carousel-prev").hover(function(){
+				$(this).find("img").attr("src","images/left_btn2.png");
+			},function(){
+				$(this).find("img").attr("src","images/left_btn1.png");
+			});
+			$(".carousel-next").hover(function(){
+				$(this).find("img").attr("src","images/right_btn2.png");
+			},function(){
+				$(this).find("img").attr("src","images/right_btn1.png");
+			});
+		});
+		$(".wrap_nav>li").eq(4).css({float:"right"})
+		$(".wrap_nav>li>a").eq(3).css({color:"#E60012"})
+	
 
 	</script>
 	<script src="libs/table.js"></script>
+
+	
+	
 		
 
 </body>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/comment.css">
+	<link rel="stylesheet" type="text/css" href="css/lore.css">
+	<style type="text/css"></style>
+</head>
+<header></header>
+<body>
+	<!-- 导航 -->
+	<div id="nav">
+		<div class="nav_content">
+			<ul class="nav_left">
+				<li><a href="#">时尚商城</a></li>
+				<li class="mobile"><a href="#"><i class="mobile_img"></i>手机优购<i class="three"></i></a></li>
+			</ul>
+
+			<ul class="nav_right">
+				<li class="nav_red"><a href="login.html">登录</a></li>
+				<li class="nav_red"><a href="register.html">注册</a></li>
+				<li class="spacer"></li>
+				<li><a href="#">我的优购<i class="three"></i></a></li>
+				<li><a href="#">我的订单</a></li>
+				<li><a href="#" >公告<i class="three"></i></a></li>
+
+				<li><a href="#">更多<i class="three"></i></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="uc_hd">
+		<div class="cen">
+			<a href="#"><img src="images/relo_logo.png" alt="logo"></a>
+			<p class="cen_font">
+				新用户注册
+			</p>
+		</div>
+
+	</div>
+
+	<div class="cen_new">
+		<!-- <a href="#"></a> -->
+		<div class="nreg_box"><!--
+			<ul class="tab_sr"> 
+				<li class="tab_sig tab_on ">
+					<a href="#" class="tb_aon">账户密码注册</a>
+				</li>
+				<li class="tab_reg">
+					<a href="#">手机快捷登录</a>
+				</li>
+			</ul>
+
+			<div class="nreg_form nf_one">
+				<form id="loginform" method="post">
+					<div class="nreg_input_bg">
+						<i class="reg_user_name"></i>
+						<input type="text" name="email" placeholder="手机号/会员名称/邮箱" id="eml" maxlength="50" >
+					</div>
+
+					<div class="nreg_input_bg">
+						<i class="reg_password"></i>
+						<input type="password" name="password" placeholder="请输入密码" id="pwd" maxlength="50" >
+					</div>
+
+					<p class="forget"><a href="#">忘记密码？</a></p>
+					<p style="text-align: center;">
+						<input type="submit" class="log_subm" value="点击登录" title="登录" />
+					</p>
+					<p class="f_back">使用合作网站账号登录优购：</p>
+					<p class="cop_link">
+						<a href="#" class="wx">&nbsp;</a>|
+						<a href="#" class="zfb">&nbsp;</a>|
+						<a href="#" class="qq">&nbsp;</a>|
+						<a href="#" class="wb">&nbsp;</a>|
+						<a href="#" class="ren">&nbsp;</a>
+					</p>
+				</form>
+			</div>
+
+
+
+
+			<div class="nreg_form">
+				<form id="mobilform" method="post">
+					<div class="nreg_input_bg">
+						<label class="labl">
+							<span class="fl">手机号</span>
+						</label>
+						<input type="text" name="phone" placeholder="请输入您的手机号码" id="reg_mobile"  >
+					</div>
+
+					<div class="nreg_input_bg code">
+						<div class="input_code">
+							<label class="labl">短信验证码</label>
+							<input type="password" name="password"  id="code_pwd" >
+						</div>
+
+						
+						<div class="fr">
+							<a href="#" class="regbtn">
+								<span id="getMsg">获取验证码</span>
+							</a>
+						</div>
+					</div>
+
+					<p class="forget"><a href="#">忘记密码？</a></p>
+					<p style="text-align: center;">
+						<input type="submit" class="log_subm" value="点击登录" title="登录" />
+					</p>
+					<p class="f_back">使用合作网站账号登录优购：</p>
+					<p class="cop_link">
+						<a href="#" class="wx">&nbsp;</a>|
+						<a href="#" class="zfb">&nbsp;</a>|
+						<a href="#" class="qq">&nbsp;</a>|
+						<a href="#" class="wb">&nbsp;</a>|
+						<a href="#" class="ren">&nbsp;</a>
+					</p>
+				</form>
+			</div>
+ -->
+
+		</div>
+	</div>
+
+
+
+	<!-- 底部 -->
+	<div class="cen_foot">
+		<p> <i>Copyright © 2011-2016 Yougou Technology Co., Ltd.</i><a href="#">粤ICP备09070608号-4</a> <i>增值电信业务经营许可证：</i><a href="#">粤
+        B2-20090203</a><i> 
+        </p>
+	</div>
+	<script src="libs/jquery-3.3.1.js"></script>
+	<script>
+		function Login(){
+			this.init();
+		}
+		Login.prototype.init = function(){
+
+			this.tb_li = $(".tab_sr").children("li");
+			this.nreg_form = $(".nreg_form");
+			// this.index = 0;
+
+			var _this = this;
+
+			this.tb_li.click(function(){
+				$(this).siblings().removeClass("tab_on");
+				$(this).parent().find("a").removeClass("tb_aon");
+				$(this).addClass("tab_on");
+				$(this).find("a").addClass("tb_aon");
+				_this.index = $(this).index();
+				_this.changeItem();
+			});
+
+
+			
+			
+		}
+
+		Login.prototype.changeItem = function(){
+			for(var j = 0 ; j < this.nreg_form.length ; j++){
+				this.nreg_form[j].style.zIndex = 0;
+				console.log(this.nreg_form[j]);
+			}
+			this.nreg_form[this.index].style.zIndex = 1;
+		}	
+		new Login();
+
+
+
+
+
+
+
+			
+
+	</script>
+</body>
+</html>
