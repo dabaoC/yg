@@ -1,0 +1,154 @@
+
+#bread{
+	width: 1050px;
+	margin: 10px auto;
+	height: 20px;
+}
+#bread .tit{
+	float: left;
+	display: inline;
+	margin-bottom: 3px;
+	height: 20px;
+	font-size: 12px;
+}
+.a_posi{
+	position: relative;
+	height: 20px;
+	float: left;
+	z-index: 8;
+
+}
+#bread a{
+	float: left;
+	display: inline;
+	margin-bottom: 3px;
+	height: 20px;
+
+}
+.a_posi .bjname{
+	color: #666;
+	/*border: 1px solid #fff;*/
+	position: relative;
+	z-index: 10;
+	padding: 0 10px;
+	z-index: 10;
+
+}
+.a_posi .nvxico,.list_bgico{
+	margin-top: -2px;
+	height: 5px;
+	overflow: hidden;
+	position: absolute;
+	top: 9px;
+	width: 12px;
+	background:url(../images/filter-sprite.png) -110px -154px no-repeat;
+
+}
+.list_bgico{
+	background:url(../images/filter-sprite.png) -110px -154px no-repeat;
+	margin-top: 5px;
+}
+#bread .fenge{
+	float: left;
+	display: inline;
+	margin-bottom: 3px;
+	height: 20px;
+	margin-top: -4px;
+}
+/*品牌框*/
+.ygFilterCon{
+	overflow: visible;
+	border:1px solid #e3e3e3;
+	font-size: 12px;
+}
+.ygFilterCon dl{
+	position: relative;
+	background: #f6f6f6;
+	border-bottom: 1px dotted #ccc;
+	margin-bottom: -1px;
+	margin-top: 1px;
+}
+.ygFilterCon dl dt{
+	float: left;
+	width: 80px;
+	padding-top: 5px;
+	padding-right: 18px;
+	text-align: right;
+	line-height: 20px;
+	background: #f6f6f6;
+}
+.ygFilterCon dl dd{
+	background: #fff;
+}
+.list_pp_pic li{
+	height: 60px;
+}
+.list_pp_pic li img{
+	width: 85px;
+	height: 40px;
+	border-right: 1px solid #e8e8e8;
+	margin-top: 10px;
+	vertical-align: middle;
+	font-size: 12px;
+}
+
+
+.catList{
+	margin-left: 115px;
+	height: 25px;
+	width: 940px;
+}
+
+.catList li{
+	float: left;
+	width: 140px;
+	padding-right: 5px;
+	height: 25px;
+	text-align: left;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.Gray{
+	color: #AAA;
+	line-height: 25px;
+	height: 25px;
+}
+.dype{
+	height: auto;
+	padding: 2px 0;
+	overflow: visible;
+	height: 30px;
+	line-height: 30px;
+}
+.nanT{
+	width: auto;
+	padding: 1px 100px 0 20px;
+	background: #fff;
+	line-height: 26px;
+	float: left;
+	top: 0;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

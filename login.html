@@ -44,25 +44,43 @@
 		<!-- <a href="#"></a> -->
 		<div class="nreg_box">
 			<ul class="tab_sr">
-				<li class="tab_sig tab_on ">
+				<li class="tab_lg tab_on ">
 					<a href="#" class="tb_aon">账户密码注册</a>
 				</li>
-				<li class="tab_reg">
+				<li class="tab_sig">
 					<a href="#">手机快捷登录</a>
 				</li>
 			</ul>
 
 			<div class="nreg_form nf_one">
 				<form id="loginform" method="post">
-					<div class="nreg_input_bg">
-						<i class="reg_user_name"></i>
-						<input type="text" name="email" placeholder="手机号/会员名称/邮箱" id="eml" maxlength="50" >
-					</div>
 
-					<div class="nreg_input_bg">
-						<i class="reg_password"></i>
-						<input type="password" name="password" placeholder="请输入密码" id="pwd" maxlength="50" >
-					</div>
+					<dl class="nreg_item">
+						<dd>
+							<div class="nreg_input_bg">
+									
+								<i class="reg_user_name"></i>
+								<input type="text" name="email" placeholder="手机号/会员名称/邮箱" class="form-control" id="userId" maxlength="50" >
+							</div>
+						</dd>
+						<dt>
+							<div id="login_email_tip" class="errortips">请输入账号</div>
+						</dt>
+						
+					</dl>
+
+					<dl class="nreg_item">
+						<dd>
+							<div class="nreg_input_bg">
+									
+								<i class="reg_password"></i>
+								<input type="password" name="password" placeholder="请输入密码" id="pwd" maxlength="50" >
+							</div>	
+						</dd>
+						<dt>
+							<div id="login_password_tip" class="errortips">请输入密码</div>
+						</dt>
+					</dl>
 
 					<p class="forget"><a href="#">忘记密码？</a></p>
 					<p style="text-align: center;">
@@ -84,28 +102,46 @@
 
 			<div class="nreg_form">
 				<form id="mobilform" method="post">
-					<div class="nreg_input_bg">
-						<label class="labl">
-							<span class="fl">手机号</span>
-						</label>
-						<input type="text" name="phone" placeholder="请输入您的手机号码" id="reg_mobile"  >
-					</div>
+					<dl class="nreg_item">
+						<div class="nreg_input_bg">
 
-					<div class="nreg_input_bg code">
-						<div class="input_code">
-							<label class="labl">短信验证码</label>
-							<input type="password" name="password"  id="code_pwd" >
+							<dd>
+								<label class="labl">
+									<span class="fl">手机号</span>
+								</label>
+								<input type="text" name="phone" placeholder="请输入您的手机号码" id="reg_mobile"  >
+								
+							</dd>
 						</div>
+						<dt>
+							<div id="reg_mobile_tip" class="errortips">请输入手机号码</div>
 
-						
-						<div class="fr">
-							<a href="#" class="regbtn">
-								<span id="getMsg">获取验证码</span>
-							</a>
-						</div>
-					</div>
+						</dt>
+					</dl>
 
-					<p class="forget"><a href="#">忘记密码？</a></p>
+					<dl id="dlMobileCode" class="nreg_item mobile_regitem">
+						<!-- <div class="nreg_input_bg"> -->
+								
+							<dd>
+								<div class="nreg_input_bg fl" style="width: 235px;margin-right: 6px;">
+									<label class="labl">短信验证码</label>
+									<input type="password" name="mobilecode"  id="reg_mobile_code" class="nreg_sinput" style="width: 155px;" >
+								</div>
+
+								
+								<div class="fr">
+									<a href="#" class="regbtn">
+										<span id="getMsg" class="getmsg">获取验证码</span>
+									</a>
+								</div>
+							</dd>
+						<!-- </div> -->
+						<dt> 
+							<div id="sendMsgTips" class="errortips">请输入短信验证码</div>
+						</dt>
+						 
+					</dl>
+					<p></p>
 					<p style="text-align: center;">
 						<input type="submit" class="log_subm" value="点击登录" title="登录" />
 					</p>
@@ -133,11 +169,23 @@
         </p>
 	</div>
 	<script src="libs/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="libs/reg.js"></script>
 	<script>
+		// 两个登录模块切换
 		function Login(){
 			this.init();
 		}
 		Login.prototype.init = function(){
+
+			$(".tab_sig").on("click",function(){
+				$("#loginform").css({display:"none"});
+				$("#mobilform").css({display:"block"});
+			})
+			$(".tab_lg").on("click",function(){
+				$("#loginform").css({display:"block"});
+
+				$("#mobilform").css({display:"none"});
+			})
 
 			this.tb_li = $(".tab_sr").children("li");
 			this.nreg_form = $(".nreg_form");
@@ -147,6 +195,8 @@
 
 			this.tb_li.click(function(){
 				$(this).siblings().removeClass("tab_on");
+
+				$(this).siblings().addClass("tab_sig");
 				$(this).parent().find("a").removeClass("tb_aon");
 				$(this).addClass("tab_on");
 				$(this).find("a").addClass("tb_aon");
@@ -169,12 +219,6 @@
 		new Login();
 
 
-
-
-
-
-
-			
 
 	</script>
 </body>

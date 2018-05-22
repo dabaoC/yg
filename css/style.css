@@ -12,7 +12,7 @@ img{ vertical-align: middle;border: 0;}
 
 .three{width: 0;height: 0;border-top: 5px solid #aaaaac;border-left: 5px solid transparent;border-right:  5px solid transparent;display: block;float: right;margin-top: 10px;margin-left:  4px;}
 .mobile_img{background: url(../images/mobile.jpg);width: 8px;height: 13px;margin-top: 6px;float: left;}*/
-
+body{color: #666;}
 /*顶部图片*/
 
 .head_img{width: 100%;}

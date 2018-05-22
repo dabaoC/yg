@@ -42,84 +42,117 @@
 
 	<div class="cen_new">
 		<!-- <a href="#"></a> -->
-		<div class="nreg_box"><!--
-			<ul class="tab_sr"> 
-				<li class="tab_sig tab_on ">
-					<a href="#" class="tb_aon">账户密码注册</a>
+		<div class="nreg_box regist_box">
+			<ul class="tab_sr">
+				<li class="tab_login tab_sig">
+					<a href="login.html" >登录</a>
 				</li>
-				<li class="tab_reg">
-					<a href="#">手机快捷登录</a>
+				<li class=" tab_on ">
+					<a href="#" class="tb_aon">注册</a>
 				</li>
 			</ul>
-
-			<div class="nreg_form nf_one">
-				<form id="loginform" method="post">
-					<div class="nreg_input_bg">
-						<i class="reg_user_name"></i>
-						<input type="text" name="email" placeholder="手机号/会员名称/邮箱" id="eml" maxlength="50" >
-					</div>
-
-					<div class="nreg_input_bg">
-						<i class="reg_password"></i>
-						<input type="password" name="password" placeholder="请输入密码" id="pwd" maxlength="50" >
-					</div>
-
-					<p class="forget"><a href="#">忘记密码？</a></p>
-					<p style="text-align: center;">
-						<input type="submit" class="log_subm" value="点击登录" title="登录" />
-					</p>
-					<p class="f_back">使用合作网站账号登录优购：</p>
-					<p class="cop_link">
-						<a href="#" class="wx">&nbsp;</a>|
-						<a href="#" class="zfb">&nbsp;</a>|
-						<a href="#" class="qq">&nbsp;</a>|
-						<a href="#" class="wb">&nbsp;</a>|
-						<a href="#" class="ren">&nbsp;</a>
-					</p>
-				</form>
-			</div>
+			
+			<div class="nreg_form ">
 
 
-
-
-			<div class="nreg_form">
-				<form id="mobilform" method="post">
-					<div class="nreg_input_bg">
-						<label class="labl">
-							<span class="fl">手机号</span>
-						</label>
-						<input type="text" name="phone" placeholder="请输入您的手机号码" id="reg_mobile"  >
-					</div>
-
-					<div class="nreg_input_bg code">
-						<div class="input_code">
-							<label class="labl">短信验证码</label>
-							<input type="password" name="password"  id="code_pwd" >
+				<dl class="nreg_item mobil_regitem" id="mobile_nreg_item">
+					<dd>
+						<div class="nreg_input_bg">
+							<label class="labl nreg_mob_ema">
+								<span class="fl">手机号</span>
+								<i class="tab_nreg"></i>
+							</label>
+							<input type="text" name="mobil" id="reg_mobile" placeholder="请输入您的手机号码">
 						</div>
-
 						
+					</dd>
+					<dt>
+						<div id="reg_mobile_tip2" class="errortips">请输入手机号码</div>
+					</dt>
+
+				</dl>
+
+				<dl id="dlCode" class="nreg_item mobil_regitem">
+					<dd>
+							
+						<div class="nreg_input_bg" style="width: 200px;float: left;">
+							<label class="labl">验证码</label>
+							<input type="text" name="reg_checkcode" id="code2" maxlength="4" style="width: 128px">
+						</div>
+						<div class="fr" style=" float:left;margin-right: 17px;">
+							<img id="imageValidate2" class="changeImg" src="https://passport.yougou.com/servlet/imageCaptcha?rand=0.47238470834491797">
+						</div>
+					</dd>
+					<dt>
+						<div id="code2_tip" class="errortips">请输入验证码</div>
+					</dt>
+				</dl>
+
+				<dl id="dlMobileCode2" class="nreg_item mobile_regitem">
+					<dd>
+						<div class="nreg_input_bg fl" style="width: 235px; margin-right: 6px;">
+							<label class="labl">短信验证码</label>
+							<input type="text" name="mobileCode" id="reg_mobile_code"  class="nreg_sinput" style="width: 155px;">
+						</div>
 						<div class="fr">
 							<a href="#" class="regbtn">
-								<span id="getMsg">获取验证码</span>
+								<span id="getMsg2"  class="getmsg">获取验证码</span>
 							</a>
 						</div>
-					</div>
+					</dd>
+					<dt>
+						<div id="sendMsgTips" class="errortips">
+							请输入短信验证码
+						</div>
+					</dt>
+				</dl>
 
-					<p class="forget"><a href="#">忘记密码？</a></p>
-					<p style="text-align: center;">
-						<input type="submit" class="log_subm" value="点击登录" title="登录" />
-					</p>
-					<p class="f_back">使用合作网站账号登录优购：</p>
-					<p class="cop_link">
-						<a href="#" class="wx">&nbsp;</a>|
-						<a href="#" class="zfb">&nbsp;</a>|
-						<a href="#" class="qq">&nbsp;</a>|
-						<a href="#" class="wb">&nbsp;</a>|
-						<a href="#" class="ren">&nbsp;</a>
-					</p>
-				</form>
+
+
+				<dl class="nreg_item">
+					<dd>
+						<div class="nreg_input_bg">
+								
+							<label class="labl">密码</label>
+							<input type="password" name="password1" id="pwd" class="nreg_input" maxlength="25" placeholder="字母、数字、符号均可，6-25个字符以内" style="font-size: 12px;">
+						</div>
+							
+					</dd>
+					<dt>
+						<div id="reg_password_tip1" class="errortips">请输入密码</div>
+					</dt>
+				</dl>
+
+
+
+ 				<dl class="nreg_item">
+					<dd>
+						<div class="nreg_input_bg">
+									
+							<i class="in_password">确认密码</i>
+							<input type="password" name="password" id="confirpwd" maxlength="50";">
+						</div>	
+					</dd>
+					<dt>
+						<div id="reg_password_tip2" class="errortips">请输入确认密码</div>
+					</dt>
+				</dl>
+
+				<p style="text-align: center;width: 338px;height: 20px;margin-top: 265px;">
+					
+					<label style="padding-left: 3px;font-size: 12px;height: 14px;"><input type="checkbox" name="rules" id="rules" style="padding-top: 5px;"  checked="checked">
+						我已阅读并同意
+						<a href="http://www.yougou.com/help/registrationagreement.html" class="Red undline" target="_blank">《优购会员注册协议》</a>
+					</label>
+
+				</p>
+
+				<p style="text-align: center;margin-top: 100px;">
+					<input type="submit" class="log_subm" value="确认并注册" title="登录" />
+				</p>
+
+				
 			</div>
- -->
 
 		</div>
 	</div>
@@ -133,6 +166,7 @@
         </p>
 	</div>
 	<script src="libs/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="libs/reg.js"></script>
 	<script>
 		function Login(){
 			this.init();
@@ -147,6 +181,7 @@
 
 			this.tb_li.click(function(){
 				$(this).siblings().removeClass("tab_on");
+				$(this).siblings().addClass("tab_sig");
 				$(this).parent().find("a").removeClass("tb_aon");
 				$(this).addClass("tab_on");
 				$(this).find("a").addClass("tb_aon");
@@ -168,13 +203,6 @@
 		}	
 		new Login();
 
-
-
-
-
-
-
-			
 
 	</script>
 </body>
