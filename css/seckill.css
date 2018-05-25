@@ -1,0 +1,46 @@
+#wrap .wrap_nav2{position: relative;}
+/*大图*/
+.sk_banner{width: 1050px;margin: 0 auto;}
+.sk_banner img{width: 1050px;}
+/*小列表*/
+.sk_main{width: 1050px;margin: 0 auto;}
+.sk_goodsList{width: 1050px;overflow: hidden;margin-top: 5px;}
+.sk_goodsList li{height: 450px;overflow: hidden;width: 256px;border:1px solid #cdcdcd;float: left;margin: 5px 2px;background: #fff;position: relative;}
+.sk_goodsList .sk_goodsPic{width: 100%;	height: 240px;border-bottom: 1px dashed #898989;margin-bottom: 5px;	position: relative;	text-align: center;}
+.sk_goodsPic img{width: 240px;height: 240px;}
+.sk_goodsList .sk_goodsNmae{height: 38px;overflow: hidden;}
+.sk_goodsList p{float: left;width: 90%;padding-left: 15px;color: #333;}
+.sk_goodsList .countdown{color: #666;height: 20px;font-size: 12px;}
+.srline{text-decoration: line-through;font-weight: bold;font-size: 12px;}
+.sk_goodsList .sk_goodsPrice{
+	font-size: 34px;
+	color: #fff;
+	font-family: "微软雅黑";
+	padding-top: 16px;
+	text-indent: 5px;
+	text-shadow: 1px 1px 3px #333;
+	font-weight: bold;
+	line-height: 42px;
+	width: 138px;
+	background: url(../images/bg_01.jpg) 0 -466px;
+	height: 52px;
+	float: left;
+	margin: 10px 0 0 0;
+	position: relative;
+}
+.sk_goodsList .sk_goodsPrice span{font-size: 28px;}
+.sk_goodsList .skill{background: url(../images/img.jpg) -282px -222px;width: 80px;height: 90px;position: absolute;right: -95px;top: -11px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

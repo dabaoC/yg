@@ -23,7 +23,7 @@
 	display: inline;
 	margin-bottom: 3px;
 	height: 20px;
-
+	cursor: pointer;
 }
 .a_posi .bjname{
 	color: #666;
@@ -129,15 +129,306 @@
 	top: 0;
 	cursor: pointer;
 }
+.bd{
+	margin-top: 10px;
+	height: 24px;
+	border:1px solid #d7d3d4;
+	background: #f5f5f5;
+	padding: 5px 0;
+}
+/*排序*/
+.filter_bar{
+	width: 1050px;
+	margin:8px auto;
+	font-size: 12px;
+	border:1px solid #d7d3d4;
+	background: #f5f5f5;
+	padding: 0;
+	height: 31px;
+	line-height: 31px;
+}
 
+.proup{
+	padding-left: 25px;
+	line-height: 23px;
+}
+.proup label{
+	padding-right: 10px;
+}
+.proup .tt-normal,.proup .select-normal{
+	background-image: none;
+	background-color: #ddd;
+	width: 50px;
+	overflow: hidden;
+	margin-top:4px;
+	text-align: center;
+	padding-left: 0;
+}
+.proup a{
+	background: url(../images/resprite12.png) no-repeat;
+	float: left;
+	width: 50px;
+	padding-left: 8px;
+	height: 23px;
+	margin-right: 8px;
+}
+.proup .select-normal{
+	color: #fff;
+	background-color: #e60012;
+}
+.proup .tt-down{
+	background-position: 0 -23px;
+	margin-top: 4px;
+	margin-right: 0;
+}
+.fl{
+	float: left;
+}
+.proup .fl{
+	height: 23px;
+	line-height: 23px;
+	padding-top: 4px;
+}
+#wrap .wrap_nav2{
+	position: relative;
+}
+.fprice{
 
+	padding: 0px 5px 0 5px;
+	margin: -5px 0 0 0;
+	position: relative;
+	float: left;
+	height: 24px;
+	line-height: 19px;
+	/*border: 1px solid #f5f5f5;*/
+	border-bottom: 0 none
+	margin-right:5px;
+	margin-top: 4px;
 
+}
+.fpb-item{
+	border:1px solid rgb(204,204,204);
+	font-weight:normal;
+	float: left;
+	position: relative;
+	width: 37px;
+	height: 21px;
+	white-space: nowrap;
+	overflow: hidden;
+	background: #fff;
 
+}
+.fpb-item i{
+	width: 8px;
+	height: 21px;
+	line-height: 21px;
+	overflow: hidden;
+	color: #999;
+	float: left;
+	text-align: right;
+	font-size: 12px;
+}
+.fpb-item input{
+	border:none;
+	font-size: 12px;
+	width: 25px;
+	height: 19px;
+	cursor: text;
+	overflow: hidden;
+	float: left;
+}
+.fpb-split{
+	position: static;
+	background-position: -78px -106px;
+	display: block;
+	float: left;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+}
+.filter_chkboxs{
+	line-height: 22px;
+	margin-left: 10px;
+	height: 22px;
+	width: 200px;
+	margin-top: 5px;
+}
+.ygChkbox{
+	overflow: hidden;
+	position: relative;
+	width: 90px;
+}
+.ygChkbox .skin{
+	width: 0;
+	display: block;
+	background: url(../images/resprite12.png) -17px -197px no-repeat;
+	height: 15px;
+	padding: 0 0 0 15px;
+	cursor: pointer;
+}
+.mt5{
+	margin-top: 5px;
+}
+.filter_chkboxs p{
+	margin: 0 10px 0 2px;
+	color: #e60012;
+	float: left;
+}
+.filter_bar .toppage{
+	position: relative;
+	padding-left: 80px;
+}
+.fr{
+	float: right;
+}
+.tpagesec{
+	padding-left: 20px;
+}
+.toppage .paginator{
+	width: 120px;
+	padding: 0;
+	float: right;
+	position: absolute;
+	top: 0;
+	right: 16px;
+	display: block;
+}
+.prev1{
+	
+	background: url(../images/resprite.png) no-repeat 5px -220px;
+	cursor: not-allowed;
+	margin-top: 5px;
+}
+.page span{
+	float: left;
+	width: 22px;
+	height: 20px;
+	margin-left: 3px;
+	background-color: #fff;
+	border:1px solid #ddd;
+	overflow: hidden;
+}
+.toppage .page{
+	padding-left: 9px;
+	text-align: center;
+	float: right;
+}
+.toppage .page a{
+	background-color: #fff;
 
+}
+.paginator .page .pag_next{
+	width: 52px;
+	margin-left: 5px;
+	text-align: left;
+	background: url(../images/resprite.png) no-repeat 50px -260px;
+	padding-left: 10px;
+	line-height: 20px;
+	background-color: #fff;
+	margin-top: 5px;
+	margin-right: 10px;
 
+}
+.paginator{
+	float: right;
+}
+.page a{
+	float: left;
+	height: 20px;
+	border:1px solid #ddd;
+	overflow: hidden;
+	background: #fff;
 
+}
 
+/*商品列表*/
+.container{
+	width: 1050px;
+	margin: 20px auto;
+}
+.container li{
+	margin:0 10px;
+}
+.saleActiveRemark{
+	color: #fff;
+	background: #f0a1a1 url(../images/sf-mark.png) right -48px no-repeat;
+	white-space: nowrap;
+	height: 16px;
+	display: block;
+	overflow: hidden;
+	text-indent: 6px;
+	width: 240px;
+	font-size: 12px;
+	line-height: 16px;
+	font-style: normal;
+}
+.img_hd{
+	border:1px #ddd solid;
+	text-align: center;
 
+}
+.img_bd{
+	width: 232px;
+	height: 87px;
+	text-indent: 2px;
+	line-height: 14px;
+}
+.price_sc .ygprc{
+	font-size: 14px;
+	font-weight: bold;
+	color:#ff5000;
+}
+.price_sc del{
+	margin: 0 8px;
+	font-size: 12px;
+	color: #aaa;
+}
+/*分页*/
+.pagination{
+	width:80%;
+	height: 20px;
+	padding: 5px;
+	text-align: center;
+	/*position: fixed;*/
+	/*left:10%;*/
+	margin: 50px auto;
+	overflow: hidden;
+}
+.pagination a{
+	text-decoration: none;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background:rgba(0,0,0,.3);
+	margin-left: 5px;
+	box-shadow: 0 0 2px 2px #ddd;	
+	transition: all .2s;
+	color: #fff;
+	border-radius: 5px;
+	line-height: 25px;
+}
+.pagination a:active{
+	box-shadow: 0 0 2px 2px #caf2ec;	
+}
+.pagination a:hover{
+	color: #f99;
+	transform: scale(1.2);
+}
+.addbtn{
+	width: 100px;
+	height: 25px;
+	border-radius: 10px;
+	background: #bbb;
+	margin: 5px 72px;
+	border:0;
+	cursor: pointer;
+}
+.addbtn a{
+	color: #eee;
+}
+.addbtn:active{
+	border:1px solid #ff00ff;
+}
 
 
 

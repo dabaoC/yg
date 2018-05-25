@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="css/cardetail.css">
+	<link rel="stylesheet" type="text/css" href="css/comment.css">
+
+</head>
+<body style="background: #fff;">
+	<div id="nav">
+		<div class="nav_content">
+			<ul class="nav_left">
+				<li><a href="#">时尚商城</a></li>
+				<li class="mobile"><a href="#"><i class="mobile_img"></i>手机优购<i class="three"></i></a></li>
+			</ul>
+
+			<ul class="nav_right">
+				<li class="nav_red"><a href="login.html">登录</a></li>
+				<li class="nav_red"><a href="register.html">注册</a></li>
+				<li class="spacer"></li>
+				<li><a href="#">我的优购<i class="three"></i></a></li>
+				<li><a href="#">我的订单</a></li>
+				<li><a href="#" >公告<i class="three"></i></a></li>
+
+				<li><a href="#">更多<i class="three"></i></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- logo处 -->
+	<div class="cart_header">
+		<h1 class="cart_logo">
+			<a href="#" title="优生活，购时尚">
+				<img src="http://s1.ygimg.cn/template/common/images/logo-yg.png" alt="优购时尚商城">
+			</a>
+		</h1>
+		<div class="fr cart_step">
+			<ul>
+				<li class="current">
+					我的购物车<em></em><i></i>
+				</li>
+				<li>提交订单中心<em></em><i></i></li>
+				<li>成功提交订单<em></em><i></i></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 购物车列表 -->
+	<div id="shoppingCart">
+		<!-- 购物车是空的 -->
+		<div class="cart_null_div">
+			<div class="bd">
+				<b class="cart_null_icon fl"></b>
+				<div class="fr">
+					<p class="cart_null_txt">您的购物车中暂无商品，赶快选择心爱的商品吧！</p>
+					<p class="mt10">
+						<a href="index.html" class="gohome_btn">回到首页</a>
+					</p>
+					<p class="mt10">您可以：<br>查看<a href="#" class="cblue">我的收藏夹</a><br>查看<a href="#" class="cblue">我已购买的商品</a></p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 购物车有商品时 -->
+		<div class="cart_gray_box mt20">
+			<table class="cart_list_tb">
+
+				<thead>
+					<th style="width: 59px;height: 42px;">
+						<label class="ygChkbox">
+							<i class="skin fl mt5 ml20"></i>全选
+						</label>
+					</th>
+					<th style="width: 369px;height: 42px;"><span class="pr25">商品名称</span></th>
+					<th style="width: 110px;">单价</th>
+					<th style="width: 110px;">数量</th>
+					<th style="width: 108px;">小计（元）</th>
+					<th>操作</th>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td id="tr_td" colspan="6">
+							<!-- <div class="shopping_cart_tr">
+								<div class="shpcrt_blank10"></div>
+
+								<dl>
+									<dd class="fl rel col_chkbox">
+										<label class="ygChkbox">
+											<input type="checkbox" class="none" >
+											<i class="skin fl"></i>
+										</label>
+									</dd>
+									<dt class="col_1 fl rel">
+										<a href="#"><img src="http://i2.ygimg.cn/pics/teenmix/2018/100979301/100979301_01_t.jpg?11" width="60" height="60" class="thumImg"></a>
+									</dt>
+
+									<dd class="col_2 fl rel">
+										<a href="#" title="Teenmix/天美意2018春专柜同款白色牛皮革条纹松紧带女休闲鞋6W701AQ8">
+											<div>Teenmix/天美意2018春专柜同款白色牛皮革条纹松紧带女休闲鞋6W701AQ8</div>
+										</a>
+									</dd>
+									<dd class="col_4 fl rel">499</dd>
+
+									<dd class="col_5 fl rel">
+										<a href="#" class="goodsSub fl" proindex = "1">-</a>
+										<input type="text" name="goodsCount" proindex = "1"  value="1" class="goodsTxt fl">
+										<a href="#" class="goodsPlus fl" proindex = "1">+</a>
+									</dd>
+
+									<dd class="col_6 fl">
+										<strong class="crog">499</strong>
+									</dd>
+
+									<dd class="col_7 fr">
+										<a href="#" class="JsRemoveGood JsDel">删除</a>
+									</dd>
+
+								</dl>
+							</div>
+
+							<div class="shopping_cart_tr">
+								<div class="shpcrt_blank10"></div>
+
+								<dl>
+									<dd class="fl rel col_chkbox">
+										<label class="ygChkbox">
+											<input type="checkbox" class="none" >
+											<i class="skin fl"></i>
+										</label>
+									</dd>
+									<dt class="col_1 fl rel">
+										<a href="#"><img src="http://i2.ygimg.cn/pics/teenmix/2018/100979301/100979301_01_t.jpg?11" width="60" height="60" class="thumImg"></a>
+									</dt>
+
+									<dd class="col_2 fl rel">
+										<a href="#" title="Teenmix/天美意2018春专柜同款白色牛皮革条纹松紧带女休闲鞋6W701AQ8">
+											<div>Teenmix/天美意2018春专柜同款白色牛皮革条纹松紧带女休闲鞋6W701AQ8</div>
+										</a>
+									</dd>
+									<dd class="col_4 fl rel">499</dd>
+
+									<dd class="col_5 fl rel">
+										<a href="#" class="goodsSub fl" proindex = "1">-</a>
+										<input type="text" name="goodsCount" value="1" proindex = "1" class="goodsTxt fl">
+										<a href="#" class="goodsPlus fl" proindex = "1">+</a>
+									</dd>
+
+									<dd class="col_6 fl">
+										<strong class="crog">499</strong>
+									</dd>
+
+									<dd class="col_7 fr">
+										<a href="#" class="JsRemoveGood JsDel">删除</a>
+									</dd>
+
+								</dl>
+							</div> -->
+							
+
+							<div class="shpcrt_blank10"></div>
+						</td>
+					</tr>
+				</tbody>
+
+			</table>
+
+			<ul class="shpcrt_operations">
+				<li>
+					<label class="ygChkbox">
+						<i class="skin fl mt5 ml20"></i>全选
+					</label>
+				</li>
+				<li class="fr" style="width: 150px;text-align: center;">
+					<a href="#" class="JsRemoveGood">删除</a>
+				</li>
+			</ul>
+			<div class="shpcrt_opt"></div>
+			<div class="cen cart_gray_box_ft">
+				<a href="#" class="cart_goon_link mt5 ml20 fl">继续购物</a>
+				<div class="fl ml15 mt15">
+					<a href="#" class="cblue ml20 clearShopcart">清空购物车</a>
+				</div>
+				<div class="fr">
+					<strong>总计（不含运费）：</strong>
+					<strong class="cgray f16">¥</strong>
+					<strong class="corg f20">298</strong>
+					<a href="#" class="cart_b_paybtn ml10">去结算</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="cen_foot">
+		<p> <i>Copyright © 2011-2016 Yougou Technology Co., Ltd.</i><a href="#">粤ICP备09070608号-4</a> <i>增值电信业务经营许可证：</i><a href="#">粤
+        B2-20090203</a><i> 
+        </p>
+	</div>
+
+
+    <!-- <script src="src/libs/require.js"></script> -->
+
+
+   	<script src="libs/jquery-3.3.1.js"></script>
+	<script src="libs/jquery.cookie.js"></script>
+
+	<script type="text/javascript">
+		// require(["./src/libs/require.config"],function(){
+		// 	require(["index"])
+		// 	// console.log(1);
+		// })
+
+
+$(function(){
+
+})
+        // 从购物车得到信息
+        function getCar(){
+
+            var carListString = $.cookie("shopCart");
+            var carListArray = JSON.parse(carListString);
+            var carArray = [];
+            var html = "";
+            for(var i = 0; i < carListArray.length;i++){
+                // console.log(1);
+                console.log(carListArray[i].id);
+                // 购物车中商品id
+                var itemId = carListArray[i].id;
+                // console.log(itemId);
+                // 购物车中的商品名称
+                var itemname = carListArray[i].name;
+                // img
+                var itemImg = carListArray[i].img;
+                // price
+                var itemPrice = carListArray[i].price;
+                // num
+                var itemNum = carListArray[i].num;
+
+                var itemcheng = itemNum * itemPrice;
+
+                html += `
+                	<div class="shopping_cart_tr">
+								<div class="shpcrt_blank10"></div>
+
+								<dl>
+									<dd class="fl rel col_chkbox">
+										<label class="ygChkbox">
+											<input type="checkbox" class="none" >
+											<i class="skin fl"></i>
+										</label>
+									</dd>
+									<dt class="col_1 fl rel">
+										<a href="#"><img src=${itemImg}width="60" height="60" class="thumImg"></a>
+									</dt>
+
+									<dd class="col_2 fl rel">
+										<a href="#" title=${itemname}>
+											<div>${itemname}</div>
+										</a>
+									</dd>
+									<dd class="col_4 fl rel">${itemPrice}</dd>
+
+									<dd class="col_5 fl rel">
+										<a href="#javascript" class="goodsSub fl" proindex = "1">-</a>
+										<input type="text" name="goodsCount" proindex = "1"  value="${itemNum}" class="goodsTxt fl">
+										<a href="#" class="goodsPlus fl" proindex = "1">+</a>
+									</dd>
+
+									<dd class="col_6 fl">
+										<strong class="crog">${itemcheng}</strong>
+									</dd>
+
+									<dd class="col_7 fr">
+										<a href="#" class="JsRemoveGood JsDel">删除</a>
+									</dd>
+
+								</dl>
+							
+						</div>
+
+                	`;
+                	// console.log(html);
+                	
+            }
+            $("#tr_td").append($(html));
+            $(".goodsSub").on("click",function(){
+            	var input = $(this).siblings("input");
+            	var num = Number(input.val());
+            	
+            	if(num > 1){
+					input.val(--num);
+            	}
+
+            })
+            $(".goodsPlus").on("click",function(){
+            	var input = $(this).siblings("input");
+            	var num = Number(input.val());
+            	input.val(++num);
+
+            })
+
+        }
+        getCar()
+
+
+
+		
+	</script>
+</body>
+</html>
