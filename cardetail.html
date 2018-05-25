@@ -185,7 +185,7 @@
 				<div class="fr">
 					<strong>总计（不含运费）：</strong>
 					<strong class="cgray f16">¥</strong>
-					<strong class="corg f20">298</strong>
+					<strong class="corg f20">0</strong>
 					<a href="#" class="cart_b_paybtn ml10">去结算</a>
 				</div>
 			</div>
@@ -213,19 +213,27 @@
 		// })
 
 
-$(function(){
 
-})
         // 从购物车得到信息
         function getCar(){
 
             var carListString = $.cookie("shopCart");
+            console.log(carListString);
+            if(carListString == undefined){
+            	console.log(1);
+            	$(".cart_null_div").css({display:"block"})
+            	$(".cart_gray_box").css({display:"none"})
+            }else{
+
+            	$(".cart_null_div").css({display:"none"})
+            	$(".cart_gray_box").css({display:"block"})
+            }
             var carListArray = JSON.parse(carListString);
             var carArray = [];
             var html = "";
             for(var i = 0; i < carListArray.length;i++){
                 // console.log(1);
-                console.log(carListArray[i].id);
+                // console.log(carListArray[i].id);
                 // 购物车中商品id
                 var itemId = carListArray[i].id;
                 // console.log(itemId);
@@ -252,11 +260,11 @@ $(function(){
 										</label>
 									</dd>
 									<dt class="col_1 fl rel">
-										<a href="#"><img src=${itemImg}width="60" height="60" class="thumImg"></a>
+										<a href="#javascript"><img src=${itemImg}width="60" height="60" class="thumImg"></a>
 									</dt>
 
 									<dd class="col_2 fl rel">
-										<a href="#" title=${itemname}>
+										<a href="#javascript" title=${itemname}>
 											<div>${itemname}</div>
 										</a>
 									</dd>
@@ -265,7 +273,7 @@ $(function(){
 									<dd class="col_5 fl rel">
 										<a href="#javascript" class="goodsSub fl" proindex = "1">-</a>
 										<input type="text" name="goodsCount" proindex = "1"  value="${itemNum}" class="goodsTxt fl">
-										<a href="#" class="goodsPlus fl" proindex = "1">+</a>
+										<a href="#javascript" class="goodsPlus fl" proindex = "1">+</a>
 									</dd>
 
 									<dd class="col_6 fl">
@@ -273,7 +281,7 @@ $(function(){
 									</dd>
 
 									<dd class="col_7 fr">
-										<a href="#" class="JsRemoveGood JsDel">删除</a>
+										<a href="#javascript" class="JsRemoveGood JsDel">删除</a>
 									</dd>
 
 								</dl>
@@ -282,29 +290,50 @@ $(function(){
 
                 	`;
                 	// console.log(html);
+
                 	
             }
+
             $("#tr_td").append($(html));
+
+            // 点购物车中的商品数量的减号
             $(".goodsSub").on("click",function(){
             	var input = $(this).siblings("input");
             	var num = Number(input.val());
             	
-            	if(num > 1){
+
+			 	if(num > 1){
 					input.val(--num);
             	}
+            	console.log(num);
+            	var par =  $(this).parents(".col_5").siblings(".col_4").html();
+            	console.log(par);
+
+            	var newCheng = par*num;
+            	console.log(newCheng);
+            	 $(this).parents(".col_5").siblings(".col_6").html(newCheng);
+            	
 
             })
+
+            // 点购物车中的商品数量的加号
             $(".goodsPlus").on("click",function(){
             	var input = $(this).siblings("input");
             	var num = Number(input.val());
             	input.val(++num);
 
-            })
+            	var par =  $(this).parents(".col_5").siblings(".col_4").html();
+            	console.log(par);
 
+            	var newCheng = par*num;
+            	console.log(newCheng);
+            	 $(this).parents(".col_5").siblings(".col_6").html(newCheng);
+
+            	
+            })
+	       
         }
         getCar()
-
-
 
 		
 	</script>

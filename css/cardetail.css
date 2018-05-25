@@ -71,6 +71,7 @@ body{
 	display: none;
 
 }
+
 .cart_null_div .bd{
 	margin: 0 auto;
 	width: 400px;
@@ -129,6 +130,7 @@ body{
 	border-bottom: 0;
 	border-width: 1px 1px 0;
 	margin: 0 auto;
+	display: :block;
 
 }
 .mt20{

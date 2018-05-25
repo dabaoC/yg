@@ -23,7 +23,7 @@
             // this.load_data()
             this.loading()
             .then(function (res) {
-                console.log(JSON.parse(res)[0]);
+                // console.log(JSON.parse(res)[0]);
                 
                 this.json = JSON.parse(res)[0].resultList;
                 this.render_page();
@@ -61,13 +61,13 @@
                 html += `<li class="prolist">
                 <div class="img_hd">
                         
-                    <img src=${item.imgUrl} alt="">
+                    <a href="details.html?id=${item.commodityNo}"><img src=${item.imgUrl} alt=""></a>
                     <em class="saleActiveRemark xsq">限时抢<strong>¥${item.salePrice}</strong></em>
                     
                 </div>
                 <div class="img_bd">
                     <span class="nptt">
-                        <a href="#" title=${item.commodityName}>${item.commodityName}</a>
+                        <a href="#javascript" title=${item.commodityName}>${item.commodityName}</a>
                     </span>
                     <p class="price_sc">
                         <em class="ygprc">¥<i>${item.salePrice}</i></em>
@@ -79,17 +79,112 @@
                                 
             }.bind(this));
 
+
             this.item_main.append($(html));
 
             this.item_main.find(".addbtn a").on("click", $.proxy(this.addCart, this));
             this.item_main.find(".addbtn a").on("click",$.proxy(this.changeNum,this));
             this.item_main.find(".addbtn a").on("click",$.proxy(this.getCar,this));
 
-            // this.item_main.find(".addbtn a").on("click",$.proxy(this.fromIdToItem,this));
+            this.item_main.find(".prolist .img_hd").on("click",$.proxy(this.goodsdetail,this));
             
 
 
+
         },
+
+
+
+        // 商品详情页
+        goodsdetail(){
+            // 获取点击事件源对象
+            var target = event.target || event.srcElement;
+            // 获取商品id
+
+            var prolist = $(target).parents(".prolist");
+
+
+            var shopId = prolist.find(".img_bd .addbtn").attr("data-id");
+            // var ts = $(target).siblings()
+
+            console.log(shopId);
+
+            var shopImg = prolist.find(".img_hd img").attr("src");
+            var shopName = prolist.find(".img_bd span a").attr("title");
+            var shopPrice = prolist.find(".img_bd p .ygprc i").html();
+            var delPrice = prolist.find(".img_bd .price_sc del").html();
+            console.log(delPrice);
+            // 将商品id存入cookie
+            // 首先查询cookie中是否有name为 shopdetail 的数据
+            // 如果不存在，就创建一个对象存放到 cookie 中
+            if(!$.cookie("shopdetail")){
+                var obj = {
+                    id: shopId,
+                    // num: 1,
+                    name:shopName,
+                    img:shopImg,
+                    price:shopPrice,
+                    delPrice:delPrice
+
+                }
+
+                var jsonArr = [];
+                jsonArr.push(obj);
+                var jsonStr = JSON.stringify(jsonArr);
+                $.cookie("shopdetail",jsonStr);
+                // console.log($.cookie("shopdetail"));
+                return;
+            }
+
+
+            var jsonStr = $.cookie("shopdetail");
+
+            var jsonArr = JSON.parse(jsonStr);
+            // console.log(jsonStr);
+
+            // 用于判断是否找到对应id 的标志
+            var hasItem = false;
+            for (var i = 0; i < jsonArr.length; i++) {
+                var item = jsonArr[i];
+                if (item.id == shopId) {
+                    // 将 hasItem 标志置为true
+                    hasItem = true;
+                    break;
+                }
+            }
+
+            // 如果没有找到对应的id，则创建一个对象，将数据追加到json数组中
+            if (!hasItem) {
+                var obj = {
+                    id: shopId,
+                    // num: 1,
+                    name:shopName,
+                    img:shopImg,
+                    price:shopPrice,
+                    delPrice:delPrice
+
+                }
+                jsonArr.push(obj); 
+                // console.log(jsonArr);
+            }
+
+            // 将json数组转换为对象并存入cookie中            
+            var jsonStr = JSON.stringify(jsonArr);
+            $.cookie("shopdetail", jsonStr);
+            console.log($.cookie("shopdetail"));
+
+        },
+
+
+
+
+
+
+
+
+
+
+
 
         // 添加购物车
         addCart(event) {
@@ -125,6 +220,7 @@
 
             // 如果存在对应的 cookie，遍历里面的数据
             var jsonStr = $.cookie("shopCart");
+            // console.log(jsonStr);
             var jsonArr = JSON.parse(jsonStr);
             // 用于判断是否找到对应id 的标志
             var hasItem = false;
@@ -148,7 +244,7 @@
                     img:productImg,
                     price:proPrice
                 }
-                jsonArr.push(obj);
+                jsonArr.push(obj); 
             }
 
             // 将json数组转换为对象并存入cookie中            
